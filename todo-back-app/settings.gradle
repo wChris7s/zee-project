@@ -1,0 +1,9 @@
+rootProject.name = 'todo-back-app'
+include 'microservices'
+include 'common'
+include 'auth-server'
+include 'microservices:client'
+findProject(':microservices:client')?.name = 'client'
+include 'microservices:task'
+findProject(':microservices:task')?.name = 'task'
+

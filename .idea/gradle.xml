@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/todo-back-app" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/todo-back-app" />
+            <option value="$PROJECT_DIR$/todo-back-app/auth-server" />
+            <option value="$PROJECT_DIR$/todo-back-app/common" />
+            <option value="$PROJECT_DIR$/todo-back-app/microservices" />
+            <option value="$PROJECT_DIR$/todo-back-app/microservices/client" />
+            <option value="$PROJECT_DIR$/todo-back-app/microservices/task" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

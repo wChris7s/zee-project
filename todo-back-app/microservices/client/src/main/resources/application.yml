@@ -1,0 +1,39 @@
+server:
+  port: 9001
+  host: http://127.0.0.1:${server.port}
+spring:
+  application:
+    name: "client-microservice"
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${auth_server.host}
+      client:
+        registration:
+          oidc-client:
+            provider: spring
+            client-id: client-microservice
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "${server.host}/authorized"
+            scope: read, write
+            client-name: oidc-client
+        provider:
+          spring:
+            issuer-uri: ${auth_server.host}
+
+auth_server:
+  port: 9000
+  host: http://127.0.0.1:${auth_server.port}

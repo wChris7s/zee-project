@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.zee'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-authorization-server'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
+    implementation project(":common")
+}
+
+test {
+    useJUnitPlatform()
+}
